@@ -30,6 +30,7 @@
     if($usuario_autenticado){
         echo 'Usuário Logado';
         $_SESSION['autenticado'] = 'SIM';
+        header('Location: home.php'); // Fazer o redirecionamento para home
     }else{
         // Forçando o redirecinamento para página inicial, criando elemento get para erro
         header('Location: index.php?login=erro');
