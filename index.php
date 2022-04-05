@@ -43,12 +43,17 @@
                 <? 
                   // Verifica se  uma variável está definida ou não
                   if(isset($_GET['login']) and $_GET['login'] == 'erro'){
-                ?>
-                  <div class="text-danger">
-                    Usuário ou senha inválidos(s)
-                  </div>
-                <? }?>
-
+                  echo "
+                    <div class='text-danger'>
+                        Usuário ou senha inválidos(s)
+                    </div>";
+                  }else if(isset($_GET['login']) and $_GET['login'] == 'erro2'){
+                    echo "
+                    <div class='text-danger'>
+                        Faça login antes de acessar as páginas protegidas
+                    </div>";
+                  }
+                  ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
