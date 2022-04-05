@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     // Variavel que verifica se o usuário está autenticado
     $usuario_autenticado = false;
     // Usuários do sistema:
@@ -27,9 +29,12 @@
 
     if($usuario_autenticado){
         echo 'Usuário Logado';
+        $_SESSION['autenticado'] = 'SIM';
     }else{
         // Forçando o redirecinamento para página inicial, criando elemento get para erro
-        header('Location: index.php?login=erro'); 
+        header('Location: index.php?login=erro');
+        $_SESSION['autenticado'] = 'NAO';
+ 
     }
 
 /* 
