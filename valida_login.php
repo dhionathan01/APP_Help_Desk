@@ -28,7 +28,8 @@
     if($usuario_autenticado){
         echo 'Usuário Logado';
     }else{
-        echo 'Falha na autenticação';
+        // Forçando o redirecinamento para página inicial, criando elemento get para erro
+        header('Location: index.php?login=erro'); 
     }
 
 /* 
