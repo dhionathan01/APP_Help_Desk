@@ -1,9 +1,9 @@
 <?php
-    print_r($_GET);
+    print_r($_POST);
     echo '<br>';
 
-    echo $_GET['email'];
+    echo $_POST['email'];
     echo '<br>';
-    echo $_GET['senha'];
+    echo $_POST['senha'];
 
 ?>
