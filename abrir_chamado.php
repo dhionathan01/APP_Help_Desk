@@ -1,10 +1,4 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['autenticado']) or $_SESSION['autenticado'] != 'SIM'){
-    header('Location: index.php?login=erro2');
-  }
-  echo $_SESSION['autenticado'];
-?>
+<?require_once('validador_acess.php')?>
 <html>
   <head>
     <meta charset="utf-8" />
