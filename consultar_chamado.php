@@ -1,4 +1,29 @@
 <?require_once('validador_acess.php')?>
+
+<?php
+
+  // Criando um array para armazenar os chamados:
+  $chamados = array();
+
+  //Abrir arquivo.hd
+  $arquivo = fopen('arquivo.hd', 'r');
+  
+  // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
+
+  // Enquanto Não encontrar o fim do arquivo recuperado faça:
+  while(!feof($arquivo)){
+    // fgets -> Ele recupera todo o conteúdo da linha até que chegue no final ou ao limite de bytes se informado
+    $registro_recuperado = fgets($arquivo);
+    $chamados[] = $registro_recuperado;
+  }
+  // Fechando arquivo
+  fclose($arquivo);
+
+  echo '<pre>';
+  print_r($chamados);
+  echo '<pre>';
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />
