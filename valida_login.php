@@ -3,10 +3,15 @@
     
     // Variavel que verifica se o usuário está autenticado
     $usuario_autenticado = false;
+    $usuario_id = null;
+
     // Usuários do sistema:
     $usuarios_app = array(
-        array('email' => 'adm@test.com', 'senha' => '123456'),
-        array('email' => 'user@test.com', 'senha' => 'abcde')
+        array('id' => 1, 'email' => 'adm@test.com', 'senha' => '123456'),
+        array('id' => 2, 'email' => 'user@test.com', 'senha' => 'abcde'),
+        array('id' => 3, 'email' => 'dhionathan@adm.com', 'senha' => '123456'),
+        array('id' => 4, 'email' => 'jorge@user.com', 'senha' => 'abcde')
+
     );
 
     /* echo '<pre>';
@@ -14,14 +19,10 @@
     echo '</pre>'; */
 
     foreach($usuarios_app as $user){
-        // Debug:
-        /* echo 'Usuário app: '.$user['email'] . ' / ' . $user['senha'];
-        echo '<br>';
-        echo 'Usuário form: ' . $_POST['email'] . ' / ' . $_POST['senha'];
-        echo '<br>';
-         */
+
         if($user['email'] == $_POST['email'] and  $user['senha'] == $_POST['senha']){
             $usuario_autenticado = true;
+            $usuario_id = $user['id']; // Atribuindo o id do usuário autenticado
             break;
         }
         //echo '<br> <hr>';
@@ -30,11 +31,14 @@
     if($usuario_autenticado){
         echo 'Usuário Logado';
         $_SESSION['autenticado'] = 'SIM';
+        $_SESSION['id'] = $usuario_id; // Incorporando o id a sessão
         header('Location: home.php'); // Fazer o redirecionamento para home
     }else{
-        // Forçando o redirecinamento para página inicial, criando elemento get para erro
-        header('Location: index.php?login=erro');
+
         $_SESSION['autenticado'] = 'NAO';
+        // Forçando o redirecinamento para página inicial, criando elemento get para erro
+        //header('Location: index.php?login=erro');
+        
  
     }
 

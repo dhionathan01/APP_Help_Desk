@@ -1,5 +1,9 @@
 <?require_once('validador_acess.php')?>
 
+<?php
+  print_r($_SESSION); 
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />

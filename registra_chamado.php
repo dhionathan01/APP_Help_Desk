@@ -1,4 +1,5 @@
 <?
+    session_start();
     echo '<pre>';
     print_r($_POST);
     echo '</pre>';
@@ -15,7 +16,7 @@
 
 
     // Transformando o Array em texto:
-    $texto = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL ;
+    $texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL ;
 
     // Escrevendo no arquivo
     fwrite($arquivo, $texto);
