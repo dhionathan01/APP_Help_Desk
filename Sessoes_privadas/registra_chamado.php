@@ -12,7 +12,7 @@
 
 
     //Abrindo um arquivo:
-    $arquivo = fopen('../arquivo.hd', 'a'); // Caso o arquivo não existir ele será criado
+    $arquivo = fopen('../../../../../app_help_desk/arquivo.hd', 'a'); // Caso o arquivo não existir ele será criado
 
 
     // Transformando o Array em texto:

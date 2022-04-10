@@ -1,4 +1,4 @@
-<?require_once('../validador_acess.php')?>
+<?require_once('../validacoes/validador_acess.php')?>
 
 <?php
 
@@ -6,7 +6,7 @@
   $chamados = array();
 
   //Abrir arquivo.hd
-  $arquivo = fopen('../arquivo.hd', 'r');
+  $arquivo = fopen('../../../../../app_help_desk/arquivo.hd', 'r');
   
   // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
 

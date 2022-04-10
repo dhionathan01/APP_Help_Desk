@@ -33,7 +33,7 @@
               Login
             </div>
             <div class="card-body">
-              <form action="valida_login.php" method="POST">
+              <form action="validacoes/valida_login.php" method="POST">
                 <div class="form-group">
                   <input name="email" type="email" class="form-control" placeholder="E-mail">
                 </div>

@@ -1,4 +1,4 @@
-<?require_once('../validador_acess.php')?>
+<?require_once('../validacoes/validador_acess.php')?>
 
 <html>
   <head>
