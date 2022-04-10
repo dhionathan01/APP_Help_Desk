@@ -14,7 +14,15 @@
   while(!feof($arquivo)){
     // fgets -> Ele recupera todo o conteúdo da linha até que chegue no final ou ao limite de bytes se informado
     $registro_recuperado = fgets($arquivo);
+    if($_SESSION['perfil_id'] == '1'){
     $chamados[] = $registro_recuperado;
+    }else{
+      if($_SESSION['id'] == $registro_recuperado[0]){
+        $chamados[] = $registro_recuperado;
+      }else{
+        continue;
+      }
+    }
   }
   // Fechando arquivo
   fclose($arquivo);
@@ -65,14 +73,6 @@
                 <?php
                   /* pegar o chamado e por meio do separador # criar um array com cada conteudo */
                   $chamado_dados = explode('#', $chamado);
-
-                  // Verifica se é um perfil de usuário ou administrativo:
-                  if($_SESSION['perfil_id'] == 2){
-                    // Caso o chamado não tenha sido iniciado pelo Usuário autenticado pula o restante do bloco
-                    if($_SESSION['id'] != $chamado_dados[0]){
-                      continue;
-                    }
-                  }
                   if(count($chamado_dados) < 3 ){ // Se estiver faltando alguma informação ignore o restante do bloco
                     continue;
                   }

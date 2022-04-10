@@ -6,13 +6,13 @@
     $usuario_id = null;
     $usuario_perfil_id = null;
 
-    $perfil_usuario = array(1 => 'Administrativo', 2 => 'Usuário');
+    $perfil_usuario = array('1' => 'Administrativo', '2' => 'Usuário');
     // Usuários do sistema:
     $usuarios_app = array(
-        array('id' => 1, 'email' => 'adm@test.com', 'senha' => '123456', 'perfil_id' => '1'),
-        array('id' => 2, 'email' => 'user@test.com', 'senha' => 'abcde', 'perfil_id' => '2'),
-        array('id' => 3, 'email' => 'dhionathan@adm.com', 'senha' => '123456', 'perfil_id' => '1'),
-        array('id' => 4, 'email' => 'jorge@user.com', 'senha' => 'abcde', 'perfil_id' => '2')
+        array('id' => '1', 'email' => 'adm@test.com', 'senha' => '123456', 'perfil_id' => '1'),
+        array('id' => '2', 'email' => 'user@test.com', 'senha' => 'abcde', 'perfil_id' => '2'),
+        array('id' => '3', 'email' => 'dhionathan@adm.com', 'senha' => '123456', 'perfil_id' => '1'),
+        array('id' => '4', 'email' => 'jorge@user.com', 'senha' => 'abcde', 'perfil_id' => '2')
 
     );
 
@@ -41,7 +41,7 @@
 
         $_SESSION['autenticado'] = 'NAO';
         // Forçando o redirecinamento para página inicial, criando elemento get para erro
-        //header('Location: index.php?login=erro');
+        header('Location: index.php?login=erro');
         
  
     }
