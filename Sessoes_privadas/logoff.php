@@ -10,6 +10,6 @@
     //session_destroy() Destroe todas as variáveis session. ATENÇÃO para segurança é melhor forçar um redirecionamento para que ocorra outra chamada no http, pois os valores ainda continuam disponíveis, só seram deletados definitivamente quando houver outra requisição
 
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../index.php');
 
 ?>

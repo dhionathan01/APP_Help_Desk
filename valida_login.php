@@ -36,7 +36,7 @@
         $_SESSION['autenticado'] = 'SIM';
         $_SESSION['id'] = $usuario_id; // Incorporando o id a sessão
         $_SESSION['perfil_id'] = $usuario_perfil_id;
-        header('Location: home.php'); // Fazer o redirecionamento para home
+        header('Location: Sessoes_privadas/home.php'); // Fazer o redirecionamento para home
     }else{
 
         $_SESSION['autenticado'] = 'NAO';

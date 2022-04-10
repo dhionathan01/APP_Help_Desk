@@ -1,4 +1,4 @@
-<?require_once('validador_acess.php')?>
+<?require_once('../validador_acess.php')?>
 
 <?php
 
@@ -6,7 +6,7 @@
   $chamados = array();
 
   //Abrir arquivo.hd
-  $arquivo = fopen('arquivo.hd', 'r');
+  $arquivo = fopen('../arquivo.hd', 'r');
   
   // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
 
@@ -48,7 +48,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="../img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
       <ul class="navbar-nav">
