@@ -25,7 +25,7 @@
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../logoff.php">SAIR</a>
+          <a class="nav-link" href="logoff.php">SAIR</a>
         </li>
       </ul>
     </nav>

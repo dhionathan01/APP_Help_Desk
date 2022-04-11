@@ -1,29 +1,35 @@
 <?require_once('../validacoes/validador_acess.php')?>
 
 <?php
+  // Removendo warning de leitura de tipo bool:
+  error_reporting(0);
+  function Recuperando_arquivos($arquivo, $chamados){
+    // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
 
+    // Enquanto Não encontrar o fim do arquivo recuperado faça:
+    while(!feof($arquivo)){
+      // fgets -> Ele recupera todo o conteúdo da linha até que chegue no final ou ao limite de bytes se informado
+      $registro_recuperado = fgets($arquivo);
+      if($_SESSION['perfil_id'] == '1'){
+      $chamados[] = $registro_recuperado;
+      }else{
+        if($_SESSION['id'] == $registro_recuperado[0]){
+          $chamados[] = $registro_recuperado;
+        }else{
+          continue;
+        }
+      }
+    }
+    return $chamados;
+  }
   // Criando um array para armazenar os chamados:
   $chamados = array();
 
   //Abrir arquivo.hd
   $arquivo = fopen('../../../../../app_help_desk/arquivo.hd', 'r');
-  
-  // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
 
-  // Enquanto Não encontrar o fim do arquivo recuperado faça:
-  while(!feof($arquivo)){
-    // fgets -> Ele recupera todo o conteúdo da linha até que chegue no final ou ao limite de bytes se informado
-    $registro_recuperado = fgets($arquivo);
-    if($_SESSION['perfil_id'] == '1'){
-    $chamados[] = $registro_recuperado;
-    }else{
-      if($_SESSION['id'] == $registro_recuperado[0]){
-        $chamados[] = $registro_recuperado;
-      }else{
-        continue;
-      }
-    }
-  }
+  $chamados = Recuperando_arquivos($arquivo, $chamados);
+
   // Fechando arquivo
   fclose($arquivo);
 ?>
