@@ -2,7 +2,7 @@
 
 <?php
   // Removendo warning de leitura de tipo bool:
-  error_reporting(0);
+
   function Recuperando_arquivos($arquivo, $chamados){
     // Função feof = testa pelo fim de um arquivo. Cria se um ponteiro que vai lendo linha a linha até chegar no último retornando false caso não for a última linha do arquivo, true quando for
 
@@ -13,9 +13,8 @@
       if($_SESSION['perfil_id'] == '1'){
       $chamados[] = $registro_recuperado;
       }else{
-        if($_SESSION['id'] == $registro_recuperado[0]){
+        if(!empty($registro_recuperado) and $_SESSION['id'] == $registro_recuperado[0]){
           $chamados[] = $registro_recuperado;
-        }else{
           continue;
         }
       }
